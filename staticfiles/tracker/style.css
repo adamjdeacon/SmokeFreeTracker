@@ -1,3 +1,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.bg-gradient-blue {
+    background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+}
