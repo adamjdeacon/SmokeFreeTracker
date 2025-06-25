@@ -59,6 +59,21 @@ testing = ["coverage", "eventlet", "gevent", "pytest", "pytest-cov"]
 tornado = ["tornado (>=0.2)"]
 
 [[package]]
+name = "humanize"
+version = "4.12.3"
+description = "Python humanize utilities"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "humanize-4.12.3-py3-none-any.whl", hash = "sha256:2cbf6370af06568fa6d2da77c86edb7886f3160ecd19ee1ffef07979efc597f6"},
+    {file = "humanize-4.12.3.tar.gz", hash = "sha256:8430be3a615106fdfceb0b2c1b41c4c98c6b0fc5cc59663a5539b111dd325fb0"},
+]
+
+[package.extras]
+tests = ["freezegun", "pytest", "pytest-cov"]
+
+[[package]]
 name = "packaging"
 version = "25.0"
 description = "Core utilities for Python packages"
@@ -102,4 +117,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "d0954573dfa070a570d8c2c490460c818cad882885d34c1f6db0c23e1f9573c7"
+content-hash = "f35d07cf2671c99d435e72c9addd6de6dfb40174283bd0aff6477bc1e7541ad9"
