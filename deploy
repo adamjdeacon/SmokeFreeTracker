@@ -1,0 +1,4 @@
+gcloud run deploy smoke-tracer --source . \
+--region europe-west1 --platform managed \
+--allow-unauthenticated \
+--project smoke-tracker-464015
