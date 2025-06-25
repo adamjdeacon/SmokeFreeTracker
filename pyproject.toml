@@ -1,0 +1,23 @@
+[project]
+name = "smoke-tracker"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Adam Deacon",email = "ad2139@cam.ac.uk"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django (>=5.2.3,<6.0.0)",
+    "gunicorn (>=23.0.0,<24.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "smoke_tracker", from = "src"}]
+
+[tool.poetry.scripts]
+manage = "config.manage:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
