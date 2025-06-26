@@ -2,6 +2,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 import humanize
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from django.shortcuts import render
 from datetime import date
 from dateutil.relativedelta import relativedelta
@@ -40,3 +42,26 @@ def dashboard(request):
         'time_breakdown': humanize.precisedelta(today - QUIT_DATE,format=("%0.0f")),
     }
     return render(request, 'tracker/dashboard.html', context)
+
+@api_view(['GET'])
+def tracker_data(request):
+    today = date.today()
+    days_since = (today - QUIT_DATE).days
+    money_saved = days_since * COST_PER_DAY
+
+    badges_earned = floor(money_saved / BADGE_INTERVAL)
+    earned = [i * BADGE_INTERVAL for i in range(1, badges_earned + 1)]
+    upcoming = [(badges_earned + i) * BADGE_INTERVAL for i in range(1, 4)]
+    last = earned[-1] if earned else 0
+    next_badge = last + BADGE_INTERVAL
+    progress_percent = min(100, round(((money_saved - last) / BADGE_INTERVAL) * 100))
+
+    return Response({
+        'days': days_since,
+        'money_saved': money_saved,
+        'earned_badges': earned,
+        'upcoming_badges': upcoming,
+        'next_badge_target': next_badge,
+        'progress_percent': progress_percent,
+        'quit_date': QUIT_DATE.strftime("%Y-%m-%d"),
+    })

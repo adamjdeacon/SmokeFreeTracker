@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "tracker",  # Custom app for issue tracking
+    "rest_framework",  # Django REST Framework for API support
+    "corsheaders",  # CORS headers for API
 ]
 
 MIDDLEWARE = [
@@ -48,7 +50,10 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',  # CORS middleware
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True  # Allow all origins for CORS
 
 ROOT_URLCONF = "config.urls"
 
