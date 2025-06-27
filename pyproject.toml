@@ -11,13 +11,10 @@ dependencies = [
     "django (>=5.2.3,<6.0.0)",
     "gunicorn (>=23.0.0,<24.0.0)",
     "humanize (>=4.12.3,<5.0.0)",
-<<<<<<< HEAD
     "djangorestframework (>=3.16.0,<4.0.0)",
-    "django-cors-headers (>=4.7.0,<5.0.0)"
-=======
+    "django-cors-headers (>=4.7.0,<5.0.0)",
     "datetime (>=5.5,<6.0)",
     "python-dateutil (>=2.9.0.post0,<3.0.0)"
->>>>>>> origin
 ]
 
 [tool.poetry]
