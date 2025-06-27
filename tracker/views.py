@@ -27,14 +27,14 @@ def dashboard(request):
 
     last = last_earned or 0
     progress_percent = round(((money_saved - last) / BADGE_INTERVAL) * 100)
-
+    
     context = {
         'quit_date': QUIT_DATE,
         'days': days_since,
         'money': money_saved,
         'progress_percent': progress_percent,
-        'earned_badges': earned,
-        'upcoming_badges': upcoming,
+        'earned_badges': (list(reversed(earned))),
+        'upcoming_badges': (list(reversed(upcoming))),
         'last_earned': last_earned,
         'next_badge_target': next_badge,
         'time_breakdown': humanize.precisedelta(today - QUIT_DATE,format=("%0.0f")),
