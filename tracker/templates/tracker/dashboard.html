@@ -52,6 +52,16 @@
         <h3 class="mt-4">🏅 Milestone Badges</h3>
 
         <div class="row g-2 mt-3">
+            
+
+            {% for badge in upcoming_badges %}
+            <div class="col-6 col-sm-4 col-md-3">
+                <div class="badge bg-secondary text-light p-3 fs-6 opacity-50">
+                    £{{ badge }} 🔒
+                </div>
+            </div>
+            {% endfor %}
+
             {% for badge in earned_badges %}
             <div class="col-6 col-sm-4 col-md-3">
                 <div class="badge bg-success text-white p-3 fs-6 shadow-sm
@@ -60,14 +70,6 @@
             {% endif %}
         ">
                     £{{ badge }} Saved 🎉
-                </div>
-            </div>
-            {% endfor %}
-
-            {% for badge in upcoming_badges %}
-            <div class="col-6 col-sm-4 col-md-3">
-                <div class="badge bg-secondary text-light p-3 fs-6 opacity-50">
-                    £{{ badge }} 🔒
                 </div>
             </div>
             {% endfor %}
