@@ -1,6 +1,6 @@
 # Smoke Free Tracker
 
-![Smoke-Free Badge](https://img.shields.io/endpoint?url=https://smokefree.deaconsworld.org.uk/api/badge/)
+![Smoke-Free Badge](https://img.shields.io/endpoint?url=https://smokefree.deaconsworld.org.uk/api/badge/?format=json)
 
 After 30 years of smoking 20 a day, I finally had the motivation to give up!
 
