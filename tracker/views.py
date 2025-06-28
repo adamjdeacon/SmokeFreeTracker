@@ -65,3 +65,12 @@ def tracker_data(request):
         'progress_percent': progress_percent,
         'quit_date': QUIT_DATE.strftime("%Y-%m-%d"),
     })
+
+@api_view(['GET'])
+def badge_json(request):
+    days = (date.today() - QUIT_DATE).days
+    return Response({
+        "label": "Smoke-Free",
+        "message": f"{days} days",
+        "color": "brightgreen",
+    })
